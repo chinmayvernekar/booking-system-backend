@@ -1,6 +1,7 @@
 package com.parkingbookingsystem;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.parkingbookingsystem.locationdetails.ParkingLocationRepository;
 import com.parkingbookingsystem.locationdetails.ParkingLocations;
 import com.parkingbookingsystem.locationdetails.ParkingLocationsService;
 import com.parkingbookingsystem.role.Role;
@@ -26,6 +27,9 @@ public class CarParkingBookingSystemApplication implements CommandLineRunner{
 	RoleRepository roleRepository;
 
 	@Autowired
+	ParkingLocationRepository parkingLocationRepository;
+
+	@Autowired
 	ParkingLocationsService parkingLocationsService;
 
 	public static void main(String[] args) {
@@ -40,20 +44,23 @@ public class CarParkingBookingSystemApplication implements CommandLineRunner{
 		@Bean
 		CommandLineRunner runner(){
 			return args -> {
-				//read and write data to database
-				ObjectMapper mapper = new ObjectMapper();
-				TypeReference<List<ParkingLocations>> typeReference = new TypeReference<List<ParkingLocations>>() {
-				};
-				InputStream inputStream = TypeReference.class.getResourceAsStream("/json/parkingf135e53.json");
+				if(parkingLocationRepository.checkDataExist() == 0) {
+					//read and write data to database
+					ObjectMapper mapper = new ObjectMapper();
+					TypeReference<List<ParkingLocations>> typeReference = new TypeReference<List<ParkingLocations>>() {
+					};
+					InputStream inputStream = TypeReference.class.getResourceAsStream("/json/parkingf135e53.json");
 
-				try {
-					List<ParkingLocations> parking = mapper.readValue(inputStream, typeReference);
-					parkingLocationsService.saveDetails(parking);
-					System.out.println("Details Saved");
-				} catch (IOException e) {
-					System.out.println("Unable to save details " + e);
+					try {
+						List<ParkingLocations> parking = mapper.readValue(inputStream, typeReference);
+						parkingLocationsService.saveDetails(parking);
+						System.out.println("Details Saved");
+					} catch (IOException e) {
+						System.out.println("Unable to save details " + e);
+					}
+				}else {
+					System.out.println("Details Already Exist");
 				}
-
 
 			};
 		}

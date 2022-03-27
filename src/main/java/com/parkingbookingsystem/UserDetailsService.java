@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
@@ -26,13 +28,9 @@ public class UserDetailsService implements org.springframework.security.core.use
             throw new UsernameNotFoundException("User Is Not Register With Us.Please Register To Uses Our Service");
         }
 
-        Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-      /*  for (Role role : roles) {
-            authorities.add(new SimpleGrantedAuthority(role.getName()));
-        }*/
-
+        Set<SimpleGrantedAuthority> authorities =  new HashSet<>();
         user.getRoles().forEach(role -> {
-            authorities.add( new SimpleGrantedAuthority(role.getName()));
+            authorities.add( new SimpleGrantedAuthority("ROLE_" + role.getName()));
         });
         return new User(user.getEmail(), user.getPassword(), authorities);
     }
