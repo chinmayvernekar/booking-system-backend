@@ -37,7 +37,7 @@ public class ApplicationUsers {
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "roles", joinColumns = @JoinColumn(name = "user_id"),
 			inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Collection<Role> roles = new ArrayList<>();
+	private Set<Role> roles;
 
 	public ApplicationUsers() {
 	}
@@ -88,11 +88,11 @@ public class ApplicationUsers {
 	}
 
 
-	public Collection<Role> getRoles() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Collection<Role> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 

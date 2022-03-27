@@ -1,5 +1,6 @@
 package com.parkingbookingsystem;
 
+import com.parkingbookingsystem.configuration.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +26,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
-
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
@@ -34,17 +34,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/admin/register","/users/register","/login").permitAll();
-		http.authorizeRequests()
-				.antMatchers("/test").hasAnyAuthority("USER","ADMIN");
-		http.formLogin();
+		http.authorizeRequests().antMatchers("/admin/register","/users/register","/authenticate").permitAll();
+		http.formLogin().disable();
 		http.authorizeRequests().anyRequest().authenticated();
+		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
+		http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 	}
 
 	@Override
 	@Bean
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
+	}
+
+	@Bean
+	public JwtAuthenticationFilter authenticationTokenFilterBean() throws Exception {
+		return new JwtAuthenticationFilter();
 	}
 }
