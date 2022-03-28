@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.parkingbookingsystem.ApplicationUserRepository;
 import com.parkingbookingsystem.ApplicationUsers;
+import com.parkingbookingsystem.role.Role;
 import com.parkingbookingsystem.role.RoleRepository;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +30,22 @@ public class UserServiceImpl implements UserService{
 	public ResponseEntity<?> saveUser(ApplicationUsers applicationUsers)
 			throws JsonMappingException, JsonProcessingException, JSONException {
 		Map<String,String> map = new HashMap<>();
+		boolean checkUserExists = false;
 		try{
-			applicationUsers.addRole(roleRepository.findByName("USER"));
-			applicationUsers.setPassword(passwordEncoder.encode(applicationUsers.getPassword()));
-			applicationUserRepository.save(applicationUsers);
-			map.put("message","Registration Sucessfull");
+
+			if(applicationUserRepository.findIfUserPresent(applicationUsers.getEmail()) == checkUserExists)
+			{
+				Role role = roleRepository.findByName("USER");
+				applicationUsers.addRole(role);
+				applicationUsers.setPassword(passwordEncoder.encode(applicationUsers.getPassword()));
+				applicationUserRepository.save(applicationUsers);
+				map.put("message", "Registration Sucessfull");
+
+
+			}
+			else {
+				map.put("messgae","User " + applicationUsers.getEmail() + "is already registered.");
+			}
 		}catch (Exception e){
 			System.out.println(e);
 		}

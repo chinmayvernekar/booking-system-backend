@@ -1,17 +1,23 @@
 package com.parkingbookingsystem.locationdetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.type.PostgresUUIDType;
+
+import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
+@TypeDef(
+        name = "pg-uuid",
+        defaultForType = UUID.class,
+        typeClass = PostgresUUIDType.class
+)
 public class ParkingLocations {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
 
     private String area;
 
