@@ -5,8 +5,13 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import org.json.JSONException;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public interface SlotBookingService {
 
-    ResponseEntity<?> bookSlot(SlotBooking booking,String area)
+    ResponseEntity<?> bookSlot(SlotBooking booking)
+            throws JsonMappingException, JsonProcessingException, JSONException;
+
+    ResponseEntity<?> allBookingOfLoginUserTillDate()
             throws JsonMappingException, JsonProcessingException, JSONException;
 }

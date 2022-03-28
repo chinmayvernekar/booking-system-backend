@@ -7,10 +7,7 @@ import org.hibernate.type.PostgresUUIDType;
 
 import javax.persistence.*;
 import java.sql.Time;
-import java.time.LocalDate;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -21,35 +18,31 @@ import java.util.UUID;
 )
 public class SlotBooking {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Type(type = "pg-uuid")
     public UUID bookingId;
 
-
-    private String userId;
-
+    @Type(type = "pg-uuid")
+    private UUID userId;
 
     private String email;
 
-
     public Date bookingDate = new Date();
-
 
     private Time startTime;
 
-
     private Time endTime;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "parking_details_booking", joinColumns = @JoinColumn(name = "parking_booking_id"),
-            inverseJoinColumns = @JoinColumn(name = "parking_area_id"))
-    private Set<ParkingLocations> paking_area_id = new HashSet<>();
+    @Column(name = "location",updatable = true, nullable = true)
+    private Integer locationId;
 
-    public void addLocation(ParkingLocations area) {
-        this.paking_area_id.add(area);
-    }
+    @ManyToOne()
+    @JoinColumn(name = "location" , referencedColumnName = "id",insertable = false,updatable = false)
+    private ParkingLocations locations;
+
+
+
 
     public UUID getBookingId() {
         return bookingId;
@@ -59,11 +52,11 @@ public class SlotBooking {
         this.bookingId = bookingId;
     }
 
-    public String getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 
@@ -99,11 +92,19 @@ public class SlotBooking {
         this.endTime = endTime;
     }
 
-    public Set<ParkingLocations> getPaking_area_id() {
-        return paking_area_id;
+    public ParkingLocations getLocations() {
+        return locations;
     }
 
-    public void setPaking_area_id(Set<ParkingLocations> paking_area_id) {
-        this.paking_area_id = paking_area_id;
+    public void setLocations(ParkingLocations locations) {
+        this.locations = locations;
+    }
+
+    public Integer getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Integer locationId) {
+        this.locationId = locationId;
     }
 }
