@@ -3,6 +3,8 @@ package com.parkingbookingsystem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.UUID;
+
 public interface ApplicationUserRepository extends JpaRepository<ApplicationUsers,Long> {
 
 	ApplicationUsers findByEmail(String email);
@@ -12,5 +14,5 @@ public interface ApplicationUserRepository extends JpaRepository<ApplicationUser
 	boolean findIfUserPresent(String email);
 
 	@Query("select id from ApplicationUsers u where u.email = ?1")
-	String setUserIdToToken(String email);
+	UUID setUserIdToToken(String email);
 }

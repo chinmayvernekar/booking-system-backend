@@ -5,10 +5,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SlotBookingController {
@@ -17,8 +14,14 @@ public class SlotBookingController {
     SlotBookingService slotBookingService;
 
     @PostMapping("/book-slot")
-    public ResponseEntity<?> bookSlot(@RequestBody SlotBooking booking, @RequestParam(value = "area",required = true) String area)
+    public ResponseEntity<?> bookSlot(@RequestBody SlotBooking booking)
             throws JsonMappingException, JsonProcessingException, JSONException{
-        return slotBookingService.bookSlot(booking,area);
+        return slotBookingService.bookSlot(booking);
+    }
+
+    @GetMapping("/bookings")
+    public ResponseEntity<?> allBookingOfLoginUserTillDate()
+            throws JsonMappingException, JsonProcessingException, JSONException {
+        return slotBookingService.allBookingOfLoginUserTillDate();
     }
 }
