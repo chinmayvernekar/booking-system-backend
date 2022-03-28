@@ -37,22 +37,23 @@ public class ApplicationUsers {
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "roles", joinColumns = @JoinColumn(name = "user_id"),
 			inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Set<Role> roles;
+	private Set<Role> roles = new HashSet<>();
 
 	public ApplicationUsers() {
 	}
 
-	public ApplicationUsers(UUID id, String name, String email, String phoneNo, String password, Set<Role> roles) {
+	public ApplicationUsers(UUID id, String name, String email, String phoneNo, String password) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phoneNo = phoneNo;
 		this.password = password;
-		this.roles = roles;
+
 	}
 
 	public void addRole(Role role) {
 		this.roles.add(role);
+
 	}
 
 	public UUID getId() {

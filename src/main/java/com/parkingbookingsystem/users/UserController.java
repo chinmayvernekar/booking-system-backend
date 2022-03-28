@@ -24,19 +24,5 @@ public class UserController {
 			throws JsonMappingException, JsonProcessingException, JSONException{
 		return userService.saveUser(applicationUsers);
 	}
-
-	@PreAuthorize("hasRole('ADMIN')")
-	@GetMapping("test")
-	public String hello(){
-		return "HELLO Admin......";
-	}
-
-	@RequestMapping("/resource")
-	public  ResponseEntity<?> home() {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		HashMap map = new HashMap<>();
-		map.put("Hello You are looged in as ",auth.getName());
-		return ResponseEntity.ok(map);
-	}
 }
 

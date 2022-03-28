@@ -7,4 +7,7 @@ public interface ParkingLocationRepository extends JpaRepository<ParkingLocation
 
     @Query("select count(area) from ParkingLocations")
     public Integer checkDataExist();
+
+    @Query("select pl from ParkingLocations pl where pl.area = ?1")
+    ParkingLocations findAreaByIdForBooking(String area);
 }
