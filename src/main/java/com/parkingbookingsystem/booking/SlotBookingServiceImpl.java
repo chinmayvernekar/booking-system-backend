@@ -68,4 +68,22 @@ public class SlotBookingServiceImpl implements SlotBookingService {
         }
         return ResponseEntity.ok(map);
     }
+
+    @Override
+    public ResponseEntity<?> updateBooking(UUID bookingId, SlotBooking booking)
+            throws JsonMappingException, JsonProcessingException, JSONException {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            SlotBooking updateBooking = slotBookingRepository.findById(bookingId).orElseThrow();
+            updateBooking.setBookingDate(booking.getBookingDate());
+            updateBooking.setStartTime(booking.getStartTime());
+            updateBooking.setEndTime(booking.getEndTime());
+            updateBooking.setLocationId(booking.getLocationId());
+            final SlotBooking bookingUpdated = slotBookingRepository.save(updateBooking);
+            map.put("message","Updated Sucessfully.");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return ResponseEntity.ok(map);
+    }
 }

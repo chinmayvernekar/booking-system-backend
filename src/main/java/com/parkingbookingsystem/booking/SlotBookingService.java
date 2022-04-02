@@ -6,6 +6,7 @@ import org.json.JSONException;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface SlotBookingService {
 
@@ -13,5 +14,8 @@ public interface SlotBookingService {
             throws JsonMappingException, JsonProcessingException, JSONException;
 
     ResponseEntity<?> allBookingOfLoginUserTillDate()
+            throws JsonMappingException, JsonProcessingException, JSONException;
+
+    ResponseEntity<?> updateBooking(UUID bookingId,SlotBooking booking)
             throws JsonMappingException, JsonProcessingException, JSONException;
 }
