@@ -1,11 +1,10 @@
 package com.parkingbookingsystem.admin;
 
-import com.parkingbookingsystem.role.RoleRepository;
 import com.parkingbookingsystem.ApplicationUserRepository;
 import com.parkingbookingsystem.ApplicationUsers;
+import com.parkingbookingsystem.role.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 

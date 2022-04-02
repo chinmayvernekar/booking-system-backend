@@ -6,7 +6,9 @@ import org.hibernate.annotations.TypeDef;
 import org.hibernate.type.PostgresUUIDType;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @TypeDef(
