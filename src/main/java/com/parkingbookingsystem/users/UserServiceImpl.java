@@ -41,8 +41,6 @@ public class UserServiceImpl implements UserService{
 				applicationUsers.setPassword(passwordEncoder.encode(applicationUsers.getPassword()));
 				applicationUserRepository.save(applicationUsers);
 				map.put("message", "Registration Sucessfull");
-
-
 			}
 			else {
 				map.put("messgae","User " + applicationUsers.getEmail() + "is already registered.");
