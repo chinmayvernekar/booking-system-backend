@@ -5,5 +5,5 @@
 #ENTRYPOINT ["java","-jar","shramin-backend-java-sb.jar"]
 
 FROM openjdk:17
-ADD target/Car-Parking-Booking-System-0.0.1-SNAPSHOT.jar Car-Parking-Booking-System-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","Car-Parking-Booking-System-0.0.1-SNAPSHOT.jar"]
+ADD target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar"]

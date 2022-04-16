@@ -12,4 +12,5 @@ public interface SlotBookingRepository extends JpaRepository<SlotBooking,UUID> {
             "where au.id = ?1",nativeQuery = true)
     List<SlotBooking> allBookingOfLoginUserTillDate(UUID userId);
 
+
 }
