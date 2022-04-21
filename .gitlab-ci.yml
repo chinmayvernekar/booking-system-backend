@@ -2,9 +2,8 @@ stages:
     - build
     - deploy
 
-install_dependencies:
+deploy:
   stage: build
   script:
-    - sudo apt install docker
     - docker build -t chinmayver/booking-backend-test .   
     
