@@ -1,3 +1,13 @@
 default:
     image: ubuntu
+
+stages:
+    - build
+    - deploy
+
+install_dependencies:
+  stage: build
+  script:
+    - sudo apt install docker
+    - docker build -t chinmayver/booking-backend-test .   
     
