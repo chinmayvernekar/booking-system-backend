@@ -1,6 +1,5 @@
 build:
   image: ubuntu:latest
   script:
-    - apt install docker
     - echo "HELLO CI?CD" 
     
