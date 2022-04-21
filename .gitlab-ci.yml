@@ -1,5 +1,5 @@
 build:
   image: ubuntu:latest
   script:
-   - echo "HELLO"
+   - echo "HELLO "
    - docker --version
