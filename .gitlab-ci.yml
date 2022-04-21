@@ -1,4 +1,5 @@
 build:
+  image: ubuntu:latest
   script:
     - echo "HELLO CI?CD" 
     
