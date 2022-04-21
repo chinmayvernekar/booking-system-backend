@@ -1,6 +1,3 @@
-default:
-    image: ubuntu
-
 stages:
     - build
     - deploy
