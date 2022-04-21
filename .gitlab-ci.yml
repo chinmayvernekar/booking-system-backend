@@ -6,4 +6,4 @@ build:
    - sudo apt-get update
    - echo "UPDATE SUCCESS" 
    - sudo apt-get install -y java-11-amazon-corretto-jdk
-   - echo "installed"
+   - echo "installed "
