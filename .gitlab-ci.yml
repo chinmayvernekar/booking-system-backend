@@ -1,11 +1,4 @@
-stages:
-    - build
-    - deploy
-
-deploy:
-  image: ubuntu:latest
-  stage: build
+build image:
   script:
-    - apt install docker
-    - docker build -t chinmayver/booking-backend-test .   
+    - echo "HELLO CI?CD" 
     
