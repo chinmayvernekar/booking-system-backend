@@ -3,7 +3,9 @@ stages:
     - deploy
 
 deploy:
+  image: ubuntu:latest
   stage: build
   script:
+    - apt install docker
     - docker build -t chinmayver/booking-backend-test .   
     
