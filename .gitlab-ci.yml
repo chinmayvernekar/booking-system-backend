@@ -1,5 +1,3 @@
-build backend:
+default:
     image: ubuntu
-    script:
-        - echo "Pulling Docker Image"
-        - docker pull ubuntu
+    
