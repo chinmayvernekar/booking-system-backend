@@ -34,7 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/admin/register","/users/register","/authenticate").permitAll();
+		http.authorizeRequests().antMatchers("/admin/register",
+				"/users/register",
+				"/authenticate"
+		,"swagger-ui-custom.html").permitAll();
 		http.formLogin().disable();
 		http.authorizeRequests().anyRequest().authenticated();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

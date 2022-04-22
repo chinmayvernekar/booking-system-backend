@@ -11,6 +11,10 @@ public interface ParkingLocationsService {
 
     public void saveDetails(List<ParkingLocations> parking);
 
-    public ResponseEntity<?> listAllLocation()
-            throws JsonMappingException, JsonProcessingException, JSONException;;
+
+    public List<ParkingLocations> listAllLocations()
+            throws JsonMappingException, JsonProcessingException, JSONException;
+
+/*    public ResponseEntity<?> listAllLocation()
+           throws JsonMappingException, JsonProcessingException, JSONException;*/
 }
