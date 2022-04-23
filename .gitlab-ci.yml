@@ -1,9 +1,4 @@
 build:
   image: ubuntu:latest
   script:
-   - wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add - sudo add-apt-repository 'deb https://apt.corretto.aws stable main'
-   - echo "SUCCESS 200OK"
-   - apt-get update
-   - echo "UPDATE SUCCESS" 
-   - apt-get install -y java-11-amazon-corretto-jdk
-   - echo "installed "
+   - echo "HELLO"
