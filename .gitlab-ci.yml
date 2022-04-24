@@ -1,10 +1,12 @@
 stages:
   - build
+  - package
+  - deploy
 
-java-build:
-  # select the most appropriate image for your project
-  image: maven:3.8-openjdk-8
+maven-build:
+  image: maven:3-jdk-8
   stage: build
-  script:
-    - mvn -v
-    - mvn clean package
+  script: "mvn package -B"
+  artifacts:
+    paths:
+      - target/*.jar
