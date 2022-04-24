@@ -1,7 +1,7 @@
 maven-build:
-  image: maven:3-jdk-8
+  image: maven:3-jdk-11
   stage: build
   script: "mvn package -B"
   artifacts:
     paths:
-      - target/*.jar
+      - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
