@@ -6,5 +6,5 @@ java-build:
   image: maven:3.8-openjdk-1.8
   stage: build
   script:
-    - echo mvn -v
+    - mvn -v
     - mvn install
