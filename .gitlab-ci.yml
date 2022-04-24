@@ -6,4 +6,5 @@ java-build:
   image: maven:3.8-openjdk-1.8
   stage: build
   script:
-    - mvn package -DskipTests=true
+    - echo mvn -v
+    - mvn install
