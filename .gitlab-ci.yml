@@ -3,8 +3,8 @@ stages:
 
 java-build:
   # select the most appropriate image for your project
-  image: maven:3.8-openjdk-1.8
+  image: maven:3.8-openjdk-8
   stage: build
   script:
     - mvn -v
-    - mvn clean install
+    - mvn clean package
