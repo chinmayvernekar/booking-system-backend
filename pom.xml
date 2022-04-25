@@ -174,7 +174,7 @@
 <!--    </build>-->
 
     <build>
-        <plugins>
+<!--        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -183,11 +183,35 @@
                     <execution>
                         <id>copy-dependencies</id>
                         <phase>package</phase>
-                        <goals><goal>copy-dependencies</goal></goals>
+                        <goals><goal>repackage</goal></goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.parkingbookingsystem.CarParkingBookingSystemApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
-        </plugins>
+        </plugins>-->
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>com.parkingbookingsystem.CarParkingBookingSystemApplication</mainClass>
+            </configuration>
+
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+</plugins>
     </build>
 
 </project>

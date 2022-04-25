@@ -1,0 +1,1 @@
+web: java -jar build/libs/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
