@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 public class ParkingLocationsDetailsController {
@@ -16,9 +18,15 @@ public class ParkingLocationsDetailsController {
     @Autowired
     ParkingLocationsService parkingLocationsService;
 
-    @GetMapping("/parking-locations")
+/*    @GetMapping("/parking-locations")
     public ResponseEntity<?> listAllLocation()
             throws JsonMappingException, JsonProcessingException, JSONException {
         return parkingLocationsService.listAllLocation();
+    }*/
+
+   @GetMapping("/parking-locations")
+    public List<ParkingLocations> listAllLocations()
+            throws JsonMappingException, JsonProcessingException, JSONException {
+        return parkingLocationsService.listAllLocations();
     }
 }
