@@ -41,7 +41,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(response);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+   @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("admin")
     public String admin(){
         return "HELLO Admin......";
