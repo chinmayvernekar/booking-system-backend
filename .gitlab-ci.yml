@@ -1,17 +1,17 @@
 # image: java:17
 
 stages:
-   - build
-   - deploy
+  - build
+  - deploy
 
 build:
-   stage: build
-   script: 
-     ./mvnw package
+  stage: build
+  script: 
+    ./mvnw package
     
 artifacts:
-    paths:
-      - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
+  paths:
+    - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
 
 deploy:
   stage: deploy
@@ -19,5 +19,5 @@ deploy:
     - curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
     - echo heroku -v
     - heroku plugins:install java
-    - heroku deploy:jar target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar -a slot-booking-backend-test
+    - $HEROKU_API_KEY heroku deploy:jar target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar -a slot-booking-backend-test
 
