@@ -15,7 +15,6 @@ deploy:
   stage: deploy
   script:
     - curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-    - echo heroku -v
     - heroku plugins:install java
     - $HEROKU_API_KEY heroku deploy:jar target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar -a slot-booking-backend-test
 
