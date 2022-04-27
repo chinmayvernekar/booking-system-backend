@@ -1,8 +1,10 @@
+image: amazoncorretto:latest
+
 stages:
   - build
   
 build-stagging:
-  image: ubuntu:latest
   stage: build
   script:
-    apt update
+    mvn compile
+    
