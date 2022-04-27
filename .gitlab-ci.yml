@@ -2,6 +2,7 @@ stages:
   - build
   
 build-stagging:
+  image: ubuntu:latest
   stage: build
   script:
-    mvn package
+    apt update
