@@ -1,5 +1,12 @@
-image: maven:3.6-jdk-8
+image: java:8
+
+stages:
+  - build
+  - deploy
+
 build:
   stage: build
-  script:
-    - mvn package
+  script: ./mvnw package
+  artifacts:
+    paths:
+      - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
