@@ -2,4 +2,4 @@ image: maven:3.6-jdk-8
 build:
   stage: build
   script:
-    - mvn package -U -DskipTests
+    - mvn package
