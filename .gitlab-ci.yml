@@ -6,9 +6,9 @@ build:
   stage: build
   script: ./mvnw package
 
-artifacts:
-  paths:
-    - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
+  artifacts:
+    paths:
+      - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
 
 
 deploy:
