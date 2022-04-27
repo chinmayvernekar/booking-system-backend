@@ -8,6 +8,7 @@ import com.parkingbookingsystem.role.Role;
 import com.parkingbookingsystem.role.RoleRepository;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public ResponseEntity<?> saveUser(ApplicationUsers applicationUsers)
 			throws JsonMappingException, JsonProcessingException, JSONException {
-		Map<String,String> map = new HashMap<>();
+		Map<Object,String> map = new HashMap<>();
 		boolean checkUserExists = false;
 		try{
 
@@ -43,7 +44,8 @@ public class UserServiceImpl implements UserService{
 				map.put("message", "Registration Sucessfull");
 			}
 			else {
-				map.put("messgae","User " + applicationUsers.getEmail() + "is already registered.");
+				HttpStatus status = HttpStatus.CONFLICT;
+				map.put(status,"User " + applicationUsers.getEmail() + " is already registered.");
 			}
 		}catch (Exception e){
 			System.out.println(e);

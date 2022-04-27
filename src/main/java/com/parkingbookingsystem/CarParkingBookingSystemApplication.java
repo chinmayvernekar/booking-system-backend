@@ -6,6 +6,7 @@ import com.parkingbookingsystem.locationdetails.ParkingLocations;
 import com.parkingbookingsystem.locationdetails.ParkingLocationsService;
 import com.parkingbookingsystem.role.Role;
 import com.parkingbookingsystem.role.RoleRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,7 +23,8 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-@EnableCaching
+//@EnableCaching
+//@OpenAPIDefinition
 public class CarParkingBookingSystemApplication implements CommandLineRunner{
 
 	@Autowired
