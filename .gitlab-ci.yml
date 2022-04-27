@@ -2,10 +2,8 @@ stages:
   - build
 
 build-java-project:
+  image: ubuntu:latest
   stage: build
   script:
-    mvn package
+    sudo apt install maven
 
-artifacts:
-  paths:
-    - /home/gitlab-runner/
