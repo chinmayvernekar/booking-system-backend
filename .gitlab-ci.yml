@@ -6,5 +6,5 @@ stages:
 build-stagging:
   stage: build
   script:
-    mvn compile
+   - mvn compile
     
