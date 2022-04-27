@@ -10,6 +10,7 @@ artifacts:
   paths:
     - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
 
+
 deploy:
   stage: deploy
   script:
