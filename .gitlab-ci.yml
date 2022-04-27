@@ -12,3 +12,14 @@ build:
   artifacts:
     paths:
       - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
+
+deploy:
+  stage: deploy
+  image: ruby:latest
+  script:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
+  - dpl --provider=heroku --app=slot-booking-backend-test --api-key=$HEROKU_API_KEY
+  only:
+  - master
