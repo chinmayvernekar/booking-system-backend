@@ -8,9 +8,7 @@ build:
   stage: build
   script: 
     ./mvnw package
-
-    heroku deploy:jar target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar -a slot-booking-backend-test
-
+    
   artifacts:
     paths:
       - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
