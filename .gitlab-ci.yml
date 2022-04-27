@@ -1,4 +1,4 @@
-image: amazoncorretto:latest
+image: rvancea/maven-chrome-jdk8
 
 stages:
   - build
