@@ -1,9 +1,4 @@
-stages:
-  - build
-
-build-java-project:
-  image: ubuntu:latest
+build:
   stage: build
   script:
-    sudo apt install maven
-
+    - mvn package -U
