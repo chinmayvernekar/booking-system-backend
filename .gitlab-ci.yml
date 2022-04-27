@@ -1,10 +1,11 @@
-image: rvancea/maven-chrome-jdk8
-
 stages:
   - build
-  
-build-stagging:
+
+build-java-project:
   stage: build
   script:
-   - mvn compile
-    
+    mvn package
+
+artifacts:
+  paths:
+    - /home/gitlab-runner/
