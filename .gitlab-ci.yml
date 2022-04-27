@@ -14,5 +14,6 @@ build:
       - target/Car-Parking-Booking-System-0.0.2-SNAPSHOT.jar
 
 deploy:
+  stage: deploy
   script:
     - curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
