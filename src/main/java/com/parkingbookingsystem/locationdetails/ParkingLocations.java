@@ -18,10 +18,7 @@ import java.util.UUID;
         defaultForType = UUID.class,
         typeClass = PostgresUUIDType.class
 )
-public class ParkingLocations implements Serializable {
-
-
-
+public class ParkingLocations{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonProperty("id")
@@ -39,16 +36,21 @@ public class ParkingLocations implements Serializable {
     @JsonProperty("longitude")
     private String longitude;
 
+
+    private Integer slotAvaliable;
+
+
     public ParkingLocations() {
     }
 
 
-    public ParkingLocations(int id, String area, String pincode, String latitude, String longitude) {
+    public ParkingLocations(int id, String area, String pincode, String latitude, String longitude, Integer slotAvaliable) {
         this.id = id;
         this.area = area;
         this.pincode = pincode;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.slotAvaliable = slotAvaliable;
     }
 
     public int getId() {
@@ -89,5 +91,13 @@ public class ParkingLocations implements Serializable {
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public Integer getSlotAvaliable() {
+        return slotAvaliable;
+    }
+
+    public void setSlotAvaliable(Integer slotAvaliable) {
+        this.slotAvaliable = slotAvaliable;
     }
 }

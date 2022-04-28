@@ -45,6 +45,8 @@ public class CarParkingBookingSystemApplication implements CommandLineRunner{
 		return new BCryptPasswordEncoder();
 	}
 
+		/*
+
 		@Bean
 		CommandLineRunner runner(){
 			return args -> {
@@ -68,7 +70,7 @@ public class CarParkingBookingSystemApplication implements CommandLineRunner{
 
 			};
 		}
-
+*/
 
 	@Override
 	public void run(String... args) throws Exception {
