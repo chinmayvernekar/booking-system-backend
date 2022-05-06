@@ -32,4 +32,13 @@ public class SlotBookingController {
             throws JsonMappingException, JsonProcessingException, JSONException{
        return slotBookingService.updateBooking(bookingId,booking);
    }
+
+
+    @GetMapping ("/update-slot-test")
+    public ResponseEntity<?> updateSlot()
+            throws JsonMappingException, JsonProcessingException, JSONException{
+        return slotBookingService.updateSlot();
+    }
+
+
 }

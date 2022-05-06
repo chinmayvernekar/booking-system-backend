@@ -40,6 +40,9 @@ public class ParkingLocations{
     private Integer slotAvaliable;
 
 
+    private Integer totalSlot;
+
+
     public ParkingLocations() {
     }
 
@@ -99,5 +102,13 @@ public class ParkingLocations{
 
     public void setSlotAvaliable(Integer slotAvaliable) {
         this.slotAvaliable = slotAvaliable;
+    }
+
+    public Integer getTotalSlot() {
+        return totalSlot;
+    }
+
+    public void setTotalSlot(Integer totalSlot) {
+        this.totalSlot = totalSlot;
     }
 }
