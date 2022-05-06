@@ -2,11 +2,8 @@ package com.parkingbookingsystem.locationdetails;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.google.common.reflect.TypeToken;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+
+
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,8 +28,6 @@ import java.util.Map;
 public class ParkingLocationsServiceImpl implements ParkingLocationsService, Serializable {
 
     private final static Logger logger = LoggerFactory.getLogger(ParkingLocationsServiceImpl.class);
-
-    private static final Gson gson = new Gson();
 
     @Autowired
     ParkingLocationRepository parkingLocationRepository;

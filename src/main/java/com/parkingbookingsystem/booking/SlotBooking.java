@@ -7,6 +7,7 @@ import org.hibernate.type.PostgresUUIDType;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
@@ -33,6 +34,11 @@ public class SlotBooking {
     private Time startTime;
 
     private Time endTime;
+
+/*
+    @Transient
+    private LocalDateTime updateSlot = LocalDateTime.now();
+*/
 
     @Column(name = "location",updatable = true, nullable = true)
     private Integer locationId;
@@ -107,4 +113,21 @@ public class SlotBooking {
     public void setLocationId(Integer locationId) {
         this.locationId = locationId;
     }
+
+
+    /*public String getJobExpired() {
+        if(updateSlot!=null)
+        {
+
+            if(updateSlot.isAfter(LocalDateTime.now()))
+            {
+                return "N";
+            }
+            else
+            {
+                return "Y";
+            }
+        }
+        return jobExpired;
+    }*/
 }

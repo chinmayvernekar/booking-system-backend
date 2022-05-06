@@ -8,17 +8,22 @@ import com.parkingbookingsystem.ApplicationUserRepository;
 import com.parkingbookingsystem.ApplicationUsers;
 import com.parkingbookingsystem.locationdetails.ParkingLocationRepository;
 import com.parkingbookingsystem.locationdetails.ParkingLocations;
+import java.sql.Time;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.event.EventRecodingLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.*;
 
 @Service
@@ -91,23 +96,102 @@ public class SlotBookingServiceImpl implements SlotBookingService {
         return ResponseEntity.ok(map);
     }
 
+    @Override
+    public ResponseEntity<?> updateSlot() throws JsonMappingException, JsonProcessingException, JSONException {
+        Map<String, Object> map = new HashMap<>();
+//      List<Counts> endtime = null;
+        List<SlotBooking> booking ;
+        try {
+
+           /* Time endTime = Time.valueOf(LocalTime.now());
+
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+            Date today = new Date();
+
+            Date todayWithZeroTime = formatter.parse(formatter.format(today));
+
+            booking = slotBookingRepository.getAllByDate(todayWithZeroTime,endTime);
+
+            map.put("message",booking);
+*/
+        }catch (Exception e){
+
+        }
+        return ResponseEntity.ok(map);
+    }
+
     public ResponseEntity<?> reduceAvaliableSlots(SlotBooking booking){
         Map<String, Object> map = new HashMap<>();
         ParkingLocations locations = new ParkingLocations();
         Integer locationsId;
         Integer plId;
-        Integer totalSlot = 0;
-        Integer reduceAvaliableSlot = 0;
-        Integer updateSlotsAvaliable = 0;
+        Integer totalSlot;
+        Integer reduceAvaliableSlot;
+        Integer updateSlotsAvaliable;
+        Integer slotAvaliable;
+        boolean checkSlotAvaliableNullOrNot = true;
+        boolean checkSlotAvaliableNullOrNotQuery;
 
         try {
-
             locationsId = booking.getLocationId();
-            locationsId = parkingLocationRepository.decrementSlotAvalibality(locationsId);
-            totalSlot = parkingLocationRepository.getTotalSlot(locationsId);
-            updateSlotsAvaliable = totalSlot - 1;
-            parkingLocationRepository.updateTotalSlot(updateSlotsAvaliable,locationsId);
+            checkSlotAvaliableNullOrNotQuery = parkingLocationRepository.checkIfSlotAvaliableisNull(locationsId);
+                if ( checkSlotAvaliableNullOrNotQuery == checkSlotAvaliableNullOrNot)
+                {
+                    locationsId = parkingLocationRepository.decrementSlotAvalibality(locationsId);
+                    totalSlot = parkingLocationRepository.getTotalSlot(locationsId);
+                    updateSlotsAvaliable = totalSlot - 1;
+                    parkingLocationRepository.updateTotalSlot(updateSlotsAvaliable, locationsId);
+                }
+                else {
+                    slotAvaliable = parkingLocationRepository.getSlotAvaliable(locationsId);
+                    slotAvaliable --;
+                    parkingLocationRepository.updateTotalSlot(slotAvaliable, locationsId);
+
+                }
+
             map.put("message","Updated Sucessfully.");
+
+        }catch (Exception e){
+            System.out.println("Error: " + e);
+        }
+        return ResponseEntity.ok(map);
+    }
+
+//    @Scheduled(fixedDelay = 1000)
+    public ResponseEntity<?> updateAvaliableSlots(){
+        Map<String, Object> map = new HashMap<>();
+        Integer locationsId;
+        Integer plId;
+        Integer totalSlot ;
+        Integer reduceAvaliableSlot ;
+        Integer updateSlotsAvaliable ;
+//      List<Counts> counts = new ArrayList<>();
+        try {
+           /* locationsId = 92;
+            totalSlot = parkingLocationRepository.getTotalSlot(locationsId);
+            updateSlotsAvaliable = totalSlot + 1;
+
+                for (int i=0; updateSlotsAvaliable <= totalSlot; i++) {
+                    parkingLocationRepository.updateTotalSlot(updateSlotsAvaliable,locationsId);
+                }
+
+
+            map.put("message","Updated Sucessfully.");
+    */
+
+/*
+           Time endTime = Time.valueOf(LocalTime.now());
+          System.out.println(endTime);
+*/
+
+/*            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+            Date today = new Date();
+
+            Date todayWithZeroTime = formatter.parse(formatter.format(today));
+
+            System.out.println(todayWithZeroTime);*/
 
         }catch (Exception e){
             System.out.println("Error: " + e);

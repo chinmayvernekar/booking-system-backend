@@ -18,4 +18,7 @@ public interface SlotBookingService {
 
     ResponseEntity<?> updateBooking(UUID bookingId,SlotBooking booking)
             throws JsonMappingException, JsonProcessingException, JSONException;
+
+    ResponseEntity<?> updateSlot()
+            throws JsonMappingException, JsonProcessingException, JSONException;
 }
