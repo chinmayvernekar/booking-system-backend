@@ -1,6 +1,8 @@
 package com.parkingbookingsystem.locationdetails;
 
 import com.parkingbookingsystem.booking.SlotBooking;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -30,4 +32,7 @@ public interface ParkingLocationRepository extends JpaRepository<ParkingLocation
     @Modifying
     @Query("update ParkingLocations set slotAvaliable = ?1 where id = ?2")
     public Integer updateTotalSlot(Integer slotsAvaliable,Integer location);
+
+    @Query("select pl from ParkingLocations pl")
+    Page<ParkingLocations> getAllByPageSize(Pageable page);
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,15 +19,10 @@ public class ParkingLocationsDetailsController {
     @Autowired
     ParkingLocationsService parkingLocationsService;
 
-/*    @GetMapping("/parking-locations")
-    public ResponseEntity<?> listAllLocation()
-            throws JsonMappingException, JsonProcessingException, JSONException {
-        return parkingLocationsService.listAllLocation();
-    }*/
-
    @GetMapping("/parking-locations")
-    public List<ParkingLocations> listAllLocations()
+    public  ResponseEntity<?> listAllLocations(@RequestParam(required=false) Integer pageNumber,
+                                                   @RequestParam(required=false) Integer pageSize)
             throws JsonMappingException, JsonProcessingException, JSONException {
-        return parkingLocationsService.listAllLocations();
+        return parkingLocationsService.getLocations(pageNumber,pageSize);
     }
 }
