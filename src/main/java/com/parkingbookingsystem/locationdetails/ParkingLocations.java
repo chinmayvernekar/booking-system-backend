@@ -18,7 +18,7 @@ import java.util.UUID;
         defaultForType = UUID.class,
         typeClass = PostgresUUIDType.class
 )
-public class ParkingLocations{
+public class ParkingLocations implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonProperty("id")

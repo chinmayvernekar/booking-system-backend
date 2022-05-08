@@ -6,7 +6,6 @@ import com.parkingbookingsystem.locationdetails.ParkingLocations;
 import com.parkingbookingsystem.locationdetails.ParkingLocationsService;
 import com.parkingbookingsystem.role.Role;
 import com.parkingbookingsystem.role.RoleRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,20 +14,16 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-@EnableScheduling
+//@EnableScheduling
 //@EnableCaching
-//@OpenAPIDefinition
 public class CarParkingBookingSystemApplication implements CommandLineRunner{
 
 	@Autowired
