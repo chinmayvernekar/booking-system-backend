@@ -25,4 +25,10 @@ public class ParkingLocationsDetailsController {
             throws JsonMappingException, JsonProcessingException, JSONException {
         return parkingLocationsService.getLocations(pageNumber,pageSize);
     }
+
+    @GetMapping("/locations-search")
+    public ResponseEntity<?> filterDataByAreaName(@RequestParam(required = true) String areaName)
+            throws JSONException, JsonProcessingException {
+       return parkingLocationsService.filterDataByAreaName(areaName);
+    }
 }

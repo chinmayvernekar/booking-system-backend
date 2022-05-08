@@ -13,4 +13,7 @@ public interface ParkingLocationsService {
 
     public ResponseEntity<?> getLocations(Integer page, Integer size)
             throws JsonMappingException, JsonProcessingException, JSONException;
+
+    public ResponseEntity<?> filterDataByAreaName(String area)
+            throws JsonMappingException, JsonProcessingException, JSONException;
 }

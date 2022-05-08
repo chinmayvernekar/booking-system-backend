@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 public interface ParkingLocationRepository extends JpaRepository<ParkingLocations, Long> {
 
     @Query("select count(area) from ParkingLocations")
@@ -24,7 +26,8 @@ public interface ParkingLocationRepository extends JpaRepository<ParkingLocation
     @Query("select pl.slotAvaliable from ParkingLocations pl where pl.id = ?1")
     public Integer getSlotAvaliable(Integer location);
 
-
+    @Query("select pl from ParkingLocations pl where pl.area like ?1% ")
+    public List<ParkingLocations> searchByArea(String areaName);
 
     @Query("SELECT CASE WHEN sb.slotAvaliable = 0 THEN true ELSE false END FROM ParkingLocations sb WHERE sb.id = ?1")
     public boolean checkIfSlotAvaliableisNull(Integer location);
