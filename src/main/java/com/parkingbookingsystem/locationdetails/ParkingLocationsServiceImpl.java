@@ -75,6 +75,18 @@ public class ParkingLocationsServiceImpl implements ParkingLocationsService, Ser
        return ResponseEntity.ok(locations);
     }
 
+    @Override
+    public ResponseEntity<?> filterDataByAreaName(String area) throws JsonMappingException, JsonProcessingException, JSONException {
+
+        List<ParkingLocations> filterByArea = null;
+        try {
+            filterByArea = parkingLocationRepository.searchByArea(area);
+        }
+        catch (Exception e){
+
+        }
+        return ResponseEntity.ok(filterByArea);
+    }
 
 
 }
