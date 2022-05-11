@@ -8,9 +8,17 @@ import com.parkingbookingsystem.ApplicationUserRepository;
 import com.parkingbookingsystem.ApplicationUsers;
 import com.parkingbookingsystem.locationdetails.ParkingLocationRepository;
 import com.parkingbookingsystem.locationdetails.ParkingLocations;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Time;
 import org.json.JSONException;
-import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.event.EventRecodingLogger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,26 +104,17 @@ public class SlotBookingServiceImpl implements SlotBookingService {
         return ResponseEntity.ok(map);
     }
 
+
     @Override
-    public ResponseEntity<?> updateSlot() throws JsonMappingException, JsonProcessingException, JSONException {
-        Map<String, Object> map = new HashMap<>();
-//      List<Counts> endtime = null;
-        List<SlotBooking> booking ;
+    public ResponseEntity<?> cancleBooking(UUID userId,UUID bookingId) throws JsonMappingException, JsonProcessingException, JSONException {
+        HashMap<String,String> map = new HashMap<>();
+        UUID bookingId1;
+
         try {
-
-           /* Time endTime = Time.valueOf(LocalTime.now());
-
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-
-            Date today = new Date();
-
-            Date todayWithZeroTime = formatter.parse(formatter.format(today));
-
-            booking = slotBookingRepository.getAllByDate(todayWithZeroTime,endTime);
-
-            map.put("message",booking);
-*/
-        }catch (Exception e){
+             slotBookingRepository.cancleBooking(userId,bookingId);
+             map.put("message","Cancled Sucessfully");
+        }
+        catch (Exception e){
 
         }
         return ResponseEntity.ok(map);
@@ -123,7 +122,6 @@ public class SlotBookingServiceImpl implements SlotBookingService {
 
     public ResponseEntity<?> reduceAvaliableSlots(SlotBooking booking){
         Map<String, Object> map = new HashMap<>();
-        ParkingLocations locations = new ParkingLocations();
         Integer locationsId;
         Integer plId;
         Integer totalSlot;
@@ -158,44 +156,51 @@ public class SlotBookingServiceImpl implements SlotBookingService {
         return ResponseEntity.ok(map);
     }
 
-//    @Scheduled(fixedDelay = 1000)
-    public ResponseEntity<?> updateAvaliableSlots(){
-        Map<String, Object> map = new HashMap<>();
-        Integer locationsId;
-        Integer plId;
-        Integer totalSlot ;
-        Integer reduceAvaliableSlot ;
-        Integer updateSlotsAvaliable ;
-//      List<Counts> counts = new ArrayList<>();
-        try {
-           /* locationsId = 92;
-            totalSlot = parkingLocationRepository.getTotalSlot(locationsId);
-            updateSlotsAvaliable = totalSlot + 1;
 
-                for (int i=0; updateSlotsAvaliable <= totalSlot; i++) {
-                    parkingLocationRepository.updateTotalSlot(updateSlotsAvaliable,locationsId);
-                }
+    @Scheduled(fixedDelay = 1000000)
+    public void parseEmployeeObject() throws IOException, ParseException, java.text.ParseException {
 
+        Integer totalSlot;
 
-            map.put("message","Updated Sucessfully.");
-    */
+        Long locationid;
 
-/*
-           Time endTime = Time.valueOf(LocalTime.now());
-          System.out.println(endTime);
-*/
+        Integer slotAvaliables;
 
-/*            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Integer updateSlotsAvaliable;
 
-            Date today = new Date();
+        JSONParser parser = new JSONParser();
 
-            Date todayWithZeroTime = formatter.parse(formatter.format(today));
+        List<SlotBooking> dtos = new ArrayList<>();
 
-            System.out.println(todayWithZeroTime);*/
+        dtos = slotBookingRepository.getSlotBookingByEndTimeAndBookingDate();
 
-        }catch (Exception e){
-            System.out.println("Error: " + e);
+        String fileLocation = new File("target//classes//").getAbsolutePath() + "/" +"bookingdto.json";
+
+        Path newFile = Paths.get(fileLocation);
+        Files.createDirectories(newFile.getParent());
+        System.out.println(newFile.toAbsolutePath().toString());
+
+//      String path = "/home/chinmay/Documents/Personal Project/booking-system/bookingdto.json";
+        FileWriter file = new FileWriter(new File(newFile.toAbsolutePath().toString()));
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(file, dtos);
+
+        JSONArray a = (JSONArray) parser.parse(new FileReader(fileLocation));
+
+        for (Object o : a) {
+
+            JSONObject person = (JSONObject) o;
+
+            locationid = (Long) person.get("locationId");
+            System.out.println(locationid);
+            totalSlot = parkingLocationRepository.getTotalSlot(Math.toIntExact(locationid));
+            slotAvaliables = parkingLocationRepository.checkSlotAvaliable(Math.toIntExact(locationid));
+            if(slotAvaliables < totalSlot){
+                updateSlotsAvaliable =  slotAvaliables + 1;
+                parkingLocationRepository.updateTotalSlot(updateSlotsAvaliable, Math.toIntExact(locationid));
+            }
+
         }
-        return ResponseEntity.ok(map);
+
     }
 }

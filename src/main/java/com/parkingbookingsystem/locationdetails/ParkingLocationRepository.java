@@ -29,7 +29,7 @@ public interface ParkingLocationRepository extends JpaRepository<ParkingLocation
     @Query("select pl from ParkingLocations pl where pl.area like ?1% ")
     public List<ParkingLocations> searchByArea(String areaName);
 
-    @Query("SELECT CASE WHEN sb.slotAvaliable = 0 THEN true ELSE false END FROM ParkingLocations sb WHERE sb.id = ?1")
+    @Query("SELECT CASE WHEN sb.slotAvaliable is null THEN true ELSE false END FROM ParkingLocations sb WHERE sb.id = ?1")
     public boolean checkIfSlotAvaliableisNull(Integer location);
 
     @Modifying
@@ -38,4 +38,7 @@ public interface ParkingLocationRepository extends JpaRepository<ParkingLocation
 
     @Query("select pl from ParkingLocations pl")
     Page<ParkingLocations> getAllByPageSize(Pageable page);
+
+    @Query("select pl.slotAvaliable from ParkingLocations pl where pl.id = ?1")
+    public Integer checkSlotAvaliable(Integer location);
 }

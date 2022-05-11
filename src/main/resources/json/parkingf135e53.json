@@ -4,23 +4,21 @@
     "pincode": "560 030",
     "latitude": "12.9716",
     "longitude": "77.5946",
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Agaram",
     "pincode": "560 007",
     "latitude": "12.8431",
     "longitude": "77.4863",
-
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Air Force Stn. Yelahanka",
     "pincode": "560 063",
     "latitude": "13.1048",
     "longitude": "77.5763",
-
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Banashankari",
@@ -28,7 +26,7 @@
     "latitude": "12.925453",
     "longitude": "77.546761",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Banashankari 2nd Stage",
@@ -36,7 +34,7 @@
     "latitude": "12.9249",
     "longitude": "77.5662",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Banashankari 3rd Stage",
@@ -44,7 +42,7 @@
     "latitude": "12.9271",
     "longitude": "77.5548",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Bangalore City H.O.",
@@ -52,7 +50,7 @@
     "latitude": "12.972442",
     "longitude": "77.580643",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Bangalore G.P.O.",
@@ -60,7 +58,7 @@
     "latitude": "12.972442",
     "longitude": "77.580643",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Bangalore University",
@@ -68,7 +66,7 @@
     "latitude": "12.9462",
     "longitude": "77.5103",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Bannerghatta",
@@ -76,7 +74,7 @@
     "latitude": "12.9426",
     "longitude": "77.6027",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Bannerghatta Road",
@@ -84,7 +82,7 @@
     "latitude": "12.9426",
     "longitude": "77.6027",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Bansawadi",
@@ -92,7 +90,7 @@
     "latitude": "13.0108",
     "longitude": "77.6493",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Basavangudi",
@@ -100,7 +98,7 @@
     "latitude": "12.9422",
     "longitude": "77.5748",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Basaveswaranagar",
@@ -108,7 +106,7 @@
     "latitude": "12.9957",
     "longitude": "77.5419",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Benson Town",
@@ -116,7 +114,7 @@
     "latitude": "12.9966",
     "longitude": "77.6042",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Byatarayanapura",
@@ -124,7 +122,7 @@
     "latitude": "13.0588",
     "longitude": "77.59385",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Carmelram",
@@ -132,7 +130,7 @@
     "latitude": "12.9062",
     "longitude": "77.7066",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Chamrajpet West",
@@ -140,7 +138,7 @@
     "latitude": "12.9586",
     "longitude": "77.5634",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Chickpet",
@@ -148,7 +146,7 @@
     "latitude": "12.9708",
     "longitude": "77.5806",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Chikkabanavara",
@@ -156,7 +154,7 @@
     "latitude": "13.0823",
     "longitude": "77.5068",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "C V Raman Nagar",
@@ -164,7 +162,7 @@
     "latitude": "12.9846",
     "longitude": "77.6622",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Dasarahalli",
@@ -172,7 +170,7 @@
     "latitude": "13.0458",
     "longitude": "77.5111",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Dharmaram College",
@@ -180,7 +178,7 @@
     "latitude": "12.9376",
     "longitude": "77.5991",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Doddakallasandra",
@@ -188,7 +186,7 @@
     "latitude": "12.8807",
     "longitude": "77.5576",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Domlur",
@@ -196,7 +194,7 @@
     "latitude": "12.961",
     "longitude": "77.6387",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Dooravaninagar",
@@ -204,7 +202,7 @@
     "latitude": "13.0077",
     "longitude": "77.6737",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Fraser Town",
@@ -212,7 +210,7 @@
     "latitude": "13.0007",
     "longitude": "77.6165",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Gandhinagar",
@@ -220,7 +218,7 @@
     "latitude": "12.9791",
     "longitude": "77.5777",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Gavipuram Ext.",
@@ -228,7 +226,7 @@
     "latitude": "12.9463",
     "longitude": "77.5669",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "G.K.V.K.",
@@ -236,7 +234,7 @@
     "latitude": "13.0821",
     "longitude": "77.5762",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Gokula Extension",
@@ -244,7 +242,7 @@
     "latitude": "12.9716",
     "longitude": "77.5946",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Hebbal Agri. Farm",
@@ -252,7 +250,7 @@
     "latitude": "13.0324",
     "longitude": "77.5992",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Hesaraghatta",
@@ -260,7 +258,7 @@
     "latitude": "13.1585",
     "longitude": "77.4888",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Hesaraghatta Lake",
@@ -268,7 +266,7 @@
     "latitude": "13.1585",
     "longitude": "77.4888",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "H K P Road",
@@ -276,7 +274,7 @@
     "latitude": "12.98551",
     "longitude": "77.60678",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "HMT",
@@ -284,7 +282,7 @@
     "latitude": "13.0311",
     "longitude": "77.5569",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Hospital Town East",
@@ -292,7 +290,7 @@
     "latitude": "12.9956",
     "longitude": "77.6113",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Hospital Town West",
@@ -300,7 +298,7 @@
     "latitude": "12.9716",
     "longitude": "77.5946",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Indiranagar",
@@ -308,7 +306,7 @@
     "latitude": "12.9719",
     "longitude": "77.6412",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "J C Nagar",
@@ -316,7 +314,7 @@
     "latitude": "12.9876",
     "longitude": "77.6379",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Jalahalli",
@@ -324,7 +322,7 @@
     "latitude": "13.0519",
     "longitude": "77.5416",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Jayanagar 3rd Block",
@@ -332,7 +330,7 @@
     "latitude": "12.9329",
     "longitude": "77.5839",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Jayanagar East",
@@ -340,7 +338,7 @@
     "latitude": "12.9301",
     "longitude": "77.5877",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Jayanagar South",
@@ -348,7 +346,7 @@
     "latitude": "12.9301",
     "longitude": "77.5877",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "J P Nagar",
@@ -356,7 +354,7 @@
     "latitude": "12.9105",
     "longitude": "77.5857",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Kadugodi",
@@ -364,7 +362,7 @@
     "latitude": "12.9986",
     "longitude": "77.7631",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Kengeri",
@@ -372,7 +370,7 @@
     "latitude": "12.9",
     "longitude": "77.4833",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Kothanur",
@@ -380,7 +378,7 @@
     "latitude": "13.0585",
     "longitude": "77.6407",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Krishnarajapuram",
@@ -388,7 +386,7 @@
     "latitude": "13.0006",
     "longitude": "77.6746",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Kumbalgodu",
@@ -396,7 +394,7 @@
     "latitude": "12.9716",
     "longitude": "77.5946",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Koramangala",
@@ -404,7 +402,7 @@
     "latitude": "12.9317",
     "longitude": "77.6227",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Koramangala 6th Block",
@@ -412,7 +410,7 @@
     "latitude": "12.9382",
     "longitude": "77.6228",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Madivala",
@@ -420,7 +418,7 @@
     "latitude": "12.9211",
     "longitude": "77.6134",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Magadi Road",
@@ -428,7 +426,7 @@
     "latitude": "12.9709",
     "longitude": "77.5658",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Mahadevapura",
@@ -436,7 +434,7 @@
     "latitude": "12.9904",
     "longitude": "77.6842",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Mahalakshmi Layout",
@@ -444,7 +442,7 @@
     "latitude": "13.0114",
     "longitude": "77.5467",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Malleswaram",
@@ -452,7 +450,7 @@
     "latitude": "13.0081",
     "longitude": "77.5648",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Malleswaram West",
@@ -460,7 +458,7 @@
     "latitude": "12.9996",
     "longitude": "77.5689",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Marathahally Colony",
@@ -468,7 +466,7 @@
     "latitude": "12.9512",
     "longitude": "77.6998",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Maruthisevanagar",
@@ -476,7 +474,7 @@
     "latitude": "13.0002",
     "longitude": "77.6336",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Mathikere",
@@ -484,7 +482,7 @@
     "latitude": "13.032",
     "longitude": "77.5605",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Nagarbhavi",
@@ -492,7 +490,7 @@
     "latitude": "12.9717",
     "longitude": "77.5132",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Nagasandra",
@@ -500,7 +498,7 @@
     "latitude": "13.02889",
     "longitude": "77.44233",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Nagashettyhalli",
@@ -508,7 +506,7 @@
     "latitude": "12.9642",
     "longitude": "77.6207",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Nandhini Layout",
@@ -516,7 +514,7 @@
     "latitude": "13.0124",
     "longitude": "77.5361",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Nayandahalli",
@@ -524,7 +522,7 @@
     "latitude": "12.9396",
     "longitude": "77.5204",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "New Tippasandra",
@@ -532,7 +530,7 @@
     "latitude": "12.9769",
     "longitude": "77.6493",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Peenya S.I.",
@@ -540,7 +538,7 @@
     "latitude": "13.0085",
     "longitude": "77.4996",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Rajajinagar",
@@ -548,7 +546,7 @@
     "latitude": "12.9906",
     "longitude": "77.5533",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Richmond Town",
@@ -556,7 +554,7 @@
     "latitude": "12.9634",
     "longitude": "77.6035",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "RT Nagar",
@@ -564,7 +562,7 @@
     "latitude": "13.0223",
     "longitude": "77.5949",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Seshadripuram",
@@ -572,7 +570,7 @@
     "latitude": "12.9864",
     "longitude": "77.582",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Shanthinagar",
@@ -580,7 +578,7 @@
     "latitude": "12.9611",
     "longitude": "77.6047",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Srirampuram",
@@ -588,7 +586,7 @@
     "latitude": "12.987",
     "longitude": "77.5662",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "St.Johns",
@@ -596,7 +594,7 @@
     "latitude": "12.991388",
     "longitude": "77.61186",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "St.Thomas Town",
@@ -604,7 +602,7 @@
     "latitude": "13.0059",
     "longitude": "77.6231",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Subramanyapura",
@@ -612,7 +610,7 @@
     "latitude": "12.9052",
     "longitude": "77.5433",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Thyagarajanagar",
@@ -620,7 +618,7 @@
     "latitude": "12.9293",
     "longitude": "77.568",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Ulsoor H.O.",
@@ -628,7 +626,7 @@
     "latitude": "12.9815",
     "longitude": "77.6192",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Vasanthanagar",
@@ -636,7 +634,7 @@
     "latitude": "12.9911",
     "longitude": "77.592",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Vidyaranyapura",
@@ -644,7 +642,7 @@
     "latitude": "13.0754",
     "longitude": "77.5591",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Vijayanagar",
@@ -652,7 +650,7 @@
     "latitude": "12.9699",
     "longitude": "77.5333",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Vimanapura",
@@ -660,7 +658,7 @@
     "latitude": "12.9645",
     "longitude": "77.6865",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Virgonagar",
@@ -668,7 +666,7 @@
     "latitude": "13.0319",
     "longitude": "77.7322",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Vyalikaval",
@@ -676,7 +674,7 @@
     "latitude": "13.0041",
     "longitude": "77.5749",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Viveknagar",
@@ -684,7 +682,7 @@
     "latitude": "12.9496",
     "longitude": "77.6223",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Whitefield",
@@ -692,7 +690,7 @@
     "latitude": "12.9698",
     "longitude": "77.7499",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Wilson Garden",
@@ -700,7 +698,7 @@
     "latitude": "12.949",
     "longitude": "77.5978",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Yelhanka",
@@ -708,7 +706,7 @@
     "latitude": "13.1048",
     "longitude": "77.5763",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   },
   {
     "area": "Yeswantpur",
@@ -716,7 +714,7 @@
     "latitude": "13.0178",
     "longitude": "77.5572",
 
-    "slotAvaliable": 10
+    "totalSlot": 10
   }
 ]
 

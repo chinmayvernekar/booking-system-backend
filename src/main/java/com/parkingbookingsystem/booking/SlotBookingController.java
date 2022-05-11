@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 public class SlotBookingController {
 
     @Autowired
@@ -34,11 +35,10 @@ public class SlotBookingController {
    }
 
 
-    @GetMapping ("/update-slot-test")
-    public ResponseEntity<?> updateSlot()
+    @DeleteMapping ("/{userid}/cancle-booking")
+    public ResponseEntity<?> cancle(@PathVariable("userid") UUID userId,@RequestParam("bookingId") UUID bookingId)
             throws JsonMappingException, JsonProcessingException, JSONException{
-        return slotBookingService.updateSlot();
+        return slotBookingService.cancleBooking(userId,bookingId);
     }
-
 
 }

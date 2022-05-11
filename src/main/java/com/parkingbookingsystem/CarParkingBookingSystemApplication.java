@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-//@EnableScheduling
+@EnableScheduling
 //@EnableCaching
 public class CarParkingBookingSystemApplication implements CommandLineRunner{
 
@@ -44,7 +44,7 @@ public class CarParkingBookingSystemApplication implements CommandLineRunner{
 		return new BCryptPasswordEncoder();
 	}
 
-		/*
+
 
 		@Bean
 		CommandLineRunner runner(){
@@ -69,7 +69,7 @@ public class CarParkingBookingSystemApplication implements CommandLineRunner{
 
 			};
 		}
-*/
+
 
 	@Override
 	public void run(String... args) throws Exception {

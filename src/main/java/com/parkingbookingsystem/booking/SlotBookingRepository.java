@@ -1,6 +1,7 @@
 package com.parkingbookingsystem.booking;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.sql.Time;
@@ -22,6 +23,11 @@ public interface SlotBookingRepository extends JpaRepository<SlotBooking,UUID> {
     @Query(value = "SELECT sb  FROM slot_booking sb where sb.booking_date <= ?1 and sb.end_time <= ?2",nativeQuery = true)
     public List<SlotBooking> getAllByDate(Date bookingDate,Time endTime);
 
+    @Modifying
+    @Query("delete from SlotBooking  where userId = ?1 and bookingId = ?2")
+    public void cancleBooking(UUID userId,UUID bookingId);
 
+    @Query("select sb from SlotBooking sb where sb.endTime < CURRENT_TIME and sb.bookingDate < CURRENT_DATE")
+    public List<SlotBooking> getSlotBookingByEndTimeAndBookingDate();
 
 }
