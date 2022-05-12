@@ -157,7 +157,7 @@ public class SlotBookingServiceImpl implements SlotBookingService {
     }
 
 
-    @Scheduled(fixedDelay = 1000000)
+    @Scheduled(fixedDelay = 10000)
     public void parseEmployeeObject() throws IOException, ParseException, java.text.ParseException {
 
         Integer totalSlot;
@@ -180,8 +180,8 @@ public class SlotBookingServiceImpl implements SlotBookingService {
         Files.createDirectories(newFile.getParent());
         System.out.println(newFile.toAbsolutePath().toString());
 
-//      String path = "/home/chinmay/Documents/Personal Project/booking-system/bookingdto.json";
-        FileWriter file = new FileWriter(new File(newFile.toAbsolutePath().toString()));
+
+        FileWriter file = new FileWriter(new File(fileLocation));
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(file, dtos);
 
