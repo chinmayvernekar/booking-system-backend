@@ -23,6 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.event.EventRecodingLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -156,8 +157,9 @@ public class SlotBookingServiceImpl implements SlotBookingService {
         return ResponseEntity.ok(map);
     }
 
-
-    @Scheduled(fixedDelay = 10000)
+/*
+//    @Scheduled(fixedDelay = 10000 )
+//    @Async
     public void parseEmployeeObject() throws IOException, ParseException, java.text.ParseException {
 
         Integer totalSlot;
@@ -202,5 +204,5 @@ public class SlotBookingServiceImpl implements SlotBookingService {
 
         }
 
-    }
+    }*/
 }
