@@ -23,7 +23,7 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableScheduling
-//@EnableCaching
+@EnableCaching
 public class CarParkingBookingSystemApplication implements CommandLineRunner{
 
 	@Autowired
