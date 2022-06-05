@@ -1,7 +1,6 @@
 package com.parkingbookingsystem.locationdetails;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.type.PostgresUUIDType;
 
@@ -19,12 +18,8 @@ import java.util.UUID;
         defaultForType = UUID.class,
         typeClass = PostgresUUIDType.class
 )
-@JsonDeserialize(as = ParkingLocations.class)
 public class ParkingLocations implements Serializable{
-
-	private static final long serialVersionUID = 2937817520261204665L;
-
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonProperty("id")
     private int id;
@@ -41,13 +36,25 @@ public class ParkingLocations implements Serializable{
     @JsonProperty("longitude")
     private String longitude;
 
-    @JsonProperty("slotAvaliable")
+
     private Integer slotAvaliable;
 
-    @JsonProperty("totalSlot")
+
     private Integer totalSlot;
 
 
+    public ParkingLocations() {
+    }
+
+
+    public ParkingLocations(int id, String area, String pincode, String latitude, String longitude, Integer slotAvaliable) {
+        this.id = id;
+        this.area = area;
+        this.pincode = pincode;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.slotAvaliable = slotAvaliable;
+    }
 
     public int getId() {
         return id;

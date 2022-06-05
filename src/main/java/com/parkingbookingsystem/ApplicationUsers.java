@@ -41,8 +41,6 @@ public class ApplicationUsers {
 			inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
-
-	private String resetToken;
 	public ApplicationUsers() {
 	}
 
@@ -107,13 +105,5 @@ public class ApplicationUsers {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getResetToken() {
-		return resetToken;
-	}
-
-	public void setResetToken(String resetToken) {
-		this.resetToken = resetToken;
 	}
 }

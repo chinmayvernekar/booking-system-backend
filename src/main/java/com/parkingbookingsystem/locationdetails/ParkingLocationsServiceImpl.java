@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-
+@CacheConfig(cacheNames = {"Locations"})
 public class ParkingLocationsServiceImpl implements ParkingLocationsService, Serializable {
 
     private final static Logger logger = LoggerFactory.getLogger(ParkingLocationsServiceImpl.class);
