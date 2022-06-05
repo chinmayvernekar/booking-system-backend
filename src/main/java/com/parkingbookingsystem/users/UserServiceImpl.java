@@ -85,7 +85,7 @@ public class UserServiceImpl implements UserService{
 
 				emailService.sendSimpleEmail(
 						user.getEmail(),
-						"To reset your password, click the link below:\n" + appUrl + "user/reset?token=" + user.getResetToken(),
+						"To reset your password, click the link below:\n" + appUrl + "/user/reset?token=" + user.getResetToken(),
 						"Password Reset Request");
 				map.put("message","Email Sent With Password Reset Link");
 			}
