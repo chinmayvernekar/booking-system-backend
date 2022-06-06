@@ -24,10 +24,12 @@ public interface SlotBookingRepository extends JpaRepository<SlotBooking,UUID> {
     public List<SlotBooking> getAllByDate(Date bookingDate,Time endTime);
 
     @Modifying
-    @Query("delete from SlotBooking  where userId = ?1 and bookingId = ?2")
-    public void cancleBooking(UUID userId,UUID bookingId);
+    @Query("delete from SlotBooking  where bookingId = ?1")
+    public void cancleBooking(UUID bookingId);
 
     @Query("select sb from SlotBooking sb where sb.endTime < CURRENT_TIME and sb.bookingDate < CURRENT_DATE")
     public List<SlotBooking> getSlotBookingByEndTimeAndBookingDate();
 
+
+    public List<SlotBooking> findAllByUserId(UUID userId);
 }
