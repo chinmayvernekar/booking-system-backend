@@ -20,6 +20,9 @@ public interface SlotBookingService {
             throws JsonMappingException, JsonProcessingException, JSONException;
 
 
-    ResponseEntity<?> cancleBooking(UUID userId,UUID bookingId)
+    ResponseEntity<?> cancleBooking(UUID bookingId)
             throws JsonMappingException, JsonProcessingException, JSONException;
+
+    ResponseEntity<?> findAllBookingByUserId(UUID userId)
+        throws JsonMappingException,JsonProcessingException,JSONException;
 }

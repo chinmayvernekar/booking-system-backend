@@ -35,10 +35,15 @@ public class SlotBookingController {
    }
 
 
-    @DeleteMapping ("/{userid}/cancle-booking")
-    public ResponseEntity<?> cancle(@PathVariable("userid") UUID userId,@RequestParam("bookingId") UUID bookingId)
+    @DeleteMapping ("/cancle-booking")
+    public ResponseEntity<?> cancle(@RequestParam("bookingId") UUID bookingId)
             throws JsonMappingException, JsonProcessingException, JSONException{
-        return slotBookingService.cancleBooking(userId,bookingId);
+        return slotBookingService.cancleBooking(bookingId);
     }
 
+    @GetMapping("/{userid}/booking")
+    public ResponseEntity<?> findAllBookingByUserId(@PathVariable("userid") UUID userId)
+            throws JsonMappingException, JsonProcessingException, JSONException {
+        return slotBookingService.findAllBookingByUserId(userId);
+    }
 }

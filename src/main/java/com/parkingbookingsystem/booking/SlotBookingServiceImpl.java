@@ -106,18 +106,30 @@ public class SlotBookingServiceImpl implements SlotBookingService {
 
 
     @Override
-    public ResponseEntity<?> cancleBooking(UUID userId,UUID bookingId) throws JsonMappingException, JsonProcessingException, JSONException {
+    public ResponseEntity<?> cancleBooking(UUID bookingId) throws JsonMappingException, JsonProcessingException, JSONException {
         HashMap<String,String> map = new HashMap<>();
         UUID bookingId1;
 
         try {
-             slotBookingRepository.cancleBooking(userId,bookingId);
+             slotBookingRepository.cancleBooking(bookingId);
              map.put("message","Cancled Sucessfully");
         }
         catch (Exception e){
 
         }
         return ResponseEntity.ok(map);
+    }
+
+    @Override
+    public ResponseEntity<?> findAllBookingByUserId(UUID userId) throws JsonMappingException, JsonProcessingException, JSONException {
+        List<SlotBooking> user = null;
+        try {
+          user = slotBookingRepository.findAllByUserId(userId);
+        }catch (Exception e){
+            e.getMessage();
+        }
+        
+        return ResponseEntity.ok(user);
     }
 
     public ResponseEntity<?> reduceAvaliableSlots(SlotBooking booking){
@@ -157,7 +169,7 @@ public class SlotBookingServiceImpl implements SlotBookingService {
     }
 
 
-    @Scheduled(fixedDelay = 10000)
+  //  @Scheduled(fixedDelay = 10000)
     public void parseEmployeeObject() throws IOException, ParseException, java.text.ParseException {
 
         Integer totalSlot;
