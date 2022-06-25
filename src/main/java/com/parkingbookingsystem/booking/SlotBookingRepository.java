@@ -31,5 +31,8 @@ public interface SlotBookingRepository extends JpaRepository<SlotBooking,UUID> {
     public List<SlotBooking> getSlotBookingByEndTimeAndBookingDate();
 
 
+    @Query("select sb.locationId from SlotBooking sb where sb.endTime < CURRENT_TIME and sb.bookingDate < CURRENT_DATE")
+    public List<Integer> getSlotBookingByEndTimeAndBookingDate(Integer locationid);
+
     public List<SlotBooking> findAllByUserId(UUID userId);
 }

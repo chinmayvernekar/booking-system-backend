@@ -11,6 +11,9 @@ import java.util.List;
 
 public interface ParkingLocationRepository extends JpaRepository<ParkingLocations, Long> {
 
+
+    public String findById(Integer locationid);
+
     @Query("select count(area) from ParkingLocations")
     public Integer checkDataExist();
 

@@ -14,12 +14,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Time;
+
+import com.parkingbookingsystem.locationdetails.ParkingLocationsServiceImpl;
 import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.event.EventRecodingLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +40,8 @@ import java.util.*;
 @Service
 @Transactional
 public class SlotBookingServiceImpl implements SlotBookingService {
+
+    private final static Logger logger = LoggerFactory.getLogger(SlotBookingServiceImpl.class);
 
     @Autowired
     ParkingLocationRepository parkingLocationRepository;
@@ -128,7 +133,7 @@ public class SlotBookingServiceImpl implements SlotBookingService {
         }catch (Exception e){
             e.getMessage();
         }
-        
+
         return ResponseEntity.ok(user);
     }
 
@@ -169,7 +174,7 @@ public class SlotBookingServiceImpl implements SlotBookingService {
     }
 
 
-  //  @Scheduled(fixedDelay = 10000)
+/*  //  @Scheduled(fixedDelay = 10000)
     public void parseEmployeeObject() throws IOException, ParseException, java.text.ParseException {
 
         Integer totalSlot;
@@ -214,5 +219,37 @@ public class SlotBookingServiceImpl implements SlotBookingService {
 
         }
 
+    }*/
+
+    @Scheduled(fixedDelay = 50000)
+    public void updateSlotWhenBookingIsCompleted(){
+
+
+        try{
+            List<SlotBooking> dtos = new ArrayList<>();
+            List<Integer> locations = null;
+            dtos = slotBookingRepository.findAll();
+
+            for(SlotBooking location : dtos){
+                locations = slotBookingRepository.getSlotBookingByEndTimeAndBookingDate(location.getLocationId());
+                logger.info("Locations (getSlotBookingByEndTimeAndBookingDate): " + locations);
+            }
+
+            for (Integer locationid: locations) {
+
+                Integer totalSlot = parkingLocationRepository.getTotalSlot(locationid);
+                Integer slotAvaliables = parkingLocationRepository.checkSlotAvaliable(locationid);
+                Integer  updateSlotsAvaliable = null;
+                if(slotAvaliables < totalSlot){
+                      updateSlotsAvaliable =  slotAvaliables + 1;
+                    parkingLocationRepository.updateTotalSlot(updateSlotsAvaliable, locationid);
+                }
+                logger.info("SLOT UPDATED SUCESSFULLY!!!");
+            }
+
+        }catch (Exception e)
+        {
+            logger.info("Something went wrong \n" + e);
+        }
     }
 }
